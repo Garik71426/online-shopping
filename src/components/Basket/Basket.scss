@@ -1,0 +1,52 @@
+.basked {
+    position: relative;
+    margin-top: 2em;
+
+    &--content{
+        position: sticky;
+        height: 80vh;
+        overflow-y: auto;
+        top:0;
+        
+        &--title{
+            text-align: center;
+            padding: 1em;
+
+            i{
+                font-size: 2em;
+            }
+
+            span{
+                font-size: 1.5em;
+                margin-left: 1em;
+            }
+        }
+        &--table{
+            &--body{
+                button{
+                    background-color: transparent;
+                    border: none;
+                    
+                    :focus{
+                        outline: 0;
+                    }
+
+                    i{
+                        color: #22411f;
+                    }
+                }
+            }
+        }
+        &--buttonsSend{
+            display: grid !important;
+
+            button{
+                margin-top: 0.7em;
+            }
+        }
+
+        &--response{
+            padding: 1em 0;
+        }
+    }
+}

@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5d88fce523612abf868c3cc7"},"charCode":"RUB","name":"Российский Рубль"}
+{"_id":{"$oid":"5d88fd0023612abf868c3cc8"},"charCode":"USD","name":"Доллар США"}
+{"_id":{"$oid":"5d88fd1623612abf868c3cc9"},"charCode":"EUR","name":"Евро"}

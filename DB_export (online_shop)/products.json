@@ -1,0 +1,11 @@
+{"_id":{"$oid":"5d8869285789ae4021cd6e35"},"name":"name1","price":1500.0,"quantity":10.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8873ed5789ae4021cd6e36"},"name":"name2","price":2500.0,"quantity":7.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874005789ae4021cd6e37"},"name":"name3","price":1650.0,"quantity":4.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874315789ae4021cd6e38"},"name":"name4","price":650.0,"quantity":14.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874435789ae4021cd6e39"},"name":"name5","price":480.0,"quantity":5.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874535789ae4021cd6e3a"},"name":"name6","price":280.0,"quantity":8.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d88748c5789ae4021cd6e3b"},"name":"name7","price":350.0,"quantity":4.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874995789ae4021cd6e3c"},"name":"name8","price":780.0,"quantity":8.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874a65789ae4021cd6e3d"},"name":"name9","price":630.0,"quantity":7.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874b15789ae4021cd6e3e"},"name":"name10","price":530.0,"quantity":4.0,"img":"images/products/product.jpg"}
+{"_id":{"$oid":"5d8874c25789ae4021cd6e3f"},"name":"name11","price":670.0,"quantity":20.0,"img":"images/products/product.jpg"}

@@ -1,0 +1,23 @@
+.products {
+  .row {
+    padding-left: 2em;
+  }
+
+  &--title {
+    position: fixed;
+    font-size: 2em;
+    top: 3em;
+    left: 0;
+
+    span {
+      display: block;
+      padding: 0 0.5em;
+    }
+  }
+}
+.card {
+  box-shadow: -2px -1px 20px 0px;
+  margin-top: 2em;
+  background-color: lavender;
+  border: none;
+}
