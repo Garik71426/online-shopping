@@ -7,7 +7,7 @@ const Currencies = require('../models/Currencies');
 
 const convertValutes = (price, valute) => {
 	return price / (valute.Value / valute.Nominal);
-}
+};
 
 /* GET Valutes with price. */
 router.get('/Valutes/:price', function (req, res, next) {
@@ -16,17 +16,28 @@ router.get('/Valutes/:price', function (req, res, next) {
 	}
 	axios.get('https://www.cbr-xml-daily.ru/daily_json.js')
 		.then(valutes => {
-			const price = req.params.price;
-			const { USD, EUR } = valutes.data.Valute;
-			let result = {
-				RUB: price,
-				USD: convertValutes(price, USD),
-				EUR: convertValutes(price, EUR)
-			}
-			res.send(result)
+			Currencies.find((err, currencies) => {
+				if (err) {
+					return err;
+				} else if (currencies.length === 0) {
+					return res.status(404).send('Not Found');
+				} else {
+					const price = req.params.price;
+					let result = {
+						RUB: price
+					};
+					for(let i = 0; i < currencies.length; i++){
+						if(currencies[i].charCode === 'RUB'){
+							continue;
+						}
+						result[currencies[i].charCode] = convertValutes(price, valutes.data.Valute[currencies[i].charCode]); 
+					}
+					res.send(result);
+				};
+			});
 		})
 		.catch(err => {
-			res.statusCode(500).send(err)
+			res.statusCode(500).send(err);
 		});
 });
 
@@ -34,7 +45,7 @@ router.get('/Valutes/:price', function (req, res, next) {
 router.get('/products', (req, res) => {
 	Products.find((err, Productss) => {
 		if (err) {
-			console.log(err);
+			return err;
 		} else if (Products.length === 0) {
 			return res.status(404).send('Not Found');
 		} else {
@@ -78,7 +89,7 @@ router.post('/basket/add', (req, res) => {
 			else 
 				res.status(200).send('ok');
 		});
-	})
+	});
 });
 
 /* delete product from basket with product_id. */
@@ -94,7 +105,7 @@ router.delete('/delete/:product_id', (req, res) => {
 		} else {
 			res.status(200).send('ok');
 		}
-	})
+	});
 });
 
 /* delete all producs from basket. */
@@ -105,8 +116,8 @@ router.delete('/delete_basket', (req, res) => {
 			return err;
 		}else{
 			res.status(200).send('ok');
-		}
-	})
+		};
+	});
 });
 
 /* GET all currencies. */
@@ -118,7 +129,7 @@ router.get('/currencies', (req, res) => {
 			return res.status(404).send('Not Found');
 		} else {
 			res.send(currencies);
-		}
+		};
 	});
 });
 
